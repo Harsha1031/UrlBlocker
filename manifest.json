@@ -1,0 +1,24 @@
+{   
+    "name": "Url Blocker",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "permissions": [
+        "activeTab",
+        "tabs"
+    ],
+    "action": {
+        "default_title": "Url Blocker",
+        "default_icon": "logo.png",
+        "default_popup": "popup.html"
+    },    
+    "icons": {
+        "128": "logo.png",
+        "64": "logo.png"
+    },
+    "content_scripts": [
+        {
+          "matches": ["https://*/*"],
+          "js": ["Logic.js"]
+        }
+      ]
+}
