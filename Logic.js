@@ -4,8 +4,7 @@ var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
 
 console.log("here", db);
 
-db.transaction(function (tx) {   
-    console.log("here",tx);
+db.transaction(function (tx) {      
     tx.executeSql('SELECT * FROM Demo', [], function (tx, results) {  
         
         console.log(results.rows);   
