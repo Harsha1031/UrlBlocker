@@ -8,7 +8,7 @@ db.transaction(function (tx) {
     console.log("here",tx);
     tx.executeSql('SELECT * FROM Demo', [], function (tx, results) {  
         
-        console.log(results.rows);
+        console.log(results.rows);   
     }, null);   
  });  
 
