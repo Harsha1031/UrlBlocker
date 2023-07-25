@@ -2,10 +2,7 @@
     "name": "Url Blocker",
     "version": "0.0.1",
     "manifest_version": 3,
-    "permissions": [
-        "activeTab",
-        "tabs","webRequest", "webRequestBlocking", "storage"
-    ],
+    "permissions": [ "storage"  ],
     "action": {
         "default_title": "Url Blocker",
         "default_icon": "logo.png",
