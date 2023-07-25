@@ -1,18 +1,14 @@
 let loca = String(window.location.href);
 
-var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024); 
+setTimeout(() => {
 
-console.log("here", db);
-
-db.transaction(function (tx) {      
-    tx.executeSql('SELECT * FROM Demo', [], function (tx, results) {  
-        
-        console.log(results.rows);   
-    }, null);   
- });  
-
-if(loca.includes("youtube")){
-    var  body = document.getElementsByTagName("body")[0];
-    body.style.backgroundColor = "white" ;
-    body.innerHTML = `<h1> You are trying to access Youtube which is blocked. </h1>`;
-}
+    chrome.storage.local.get(["URL"]).then((result) => {
+        for (let i = 0; i < result.URL.length; i++) {
+            if (loca.includes(result.URL[i])) {
+                var body = document.getElementsByTagName("body")[0];
+                body.style.backgroundColor = "white";
+                body.innerHTML = `<h1> You are trying to access ${result.URL[i]}. Which is blocked website. </h1>`;
+            }
+        }
+    });
+}, 1500);
