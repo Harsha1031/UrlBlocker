@@ -3,7 +3,7 @@ let loca = String(window.location.href);
 setTimeout(() => {
 
     chrome.storage.local.get(["URL"]).then((result) => {
-        if (result.URL.length) {
+        if (result.URL.length) { // Checking
             for (let i = 0; i < result.URL.length; i++) {
                 if (loca.includes(result.URL[i])) {
                     var body = document.getElementsByTagName("body")[0];
